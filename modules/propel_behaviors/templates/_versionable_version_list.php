@@ -12,7 +12,7 @@
       <?php echo $version->getVersion(); ?>
       -
     <?php if(strlen($version->getVersionComment())): ?>
-      <strong><?php echo $version->getVersionComment() ?><strong>
+      <strong><?php echo $version->getVersionComment() ?></strong>
     <?php else: ?>
       <em><small><?php echo __('No version comment') ?></small></em>
     <?php endif; ?>
