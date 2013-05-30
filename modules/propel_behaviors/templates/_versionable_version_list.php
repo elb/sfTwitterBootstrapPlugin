@@ -27,7 +27,9 @@
         foreach($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): ?>
         <?php foreach($fields as $name => $field): ?>
           <?php if (isset($diff[sfInflector::camelize($name)])) : ?>
-            <dd class="version-field"><?php echo __('Field <strong>%fieldlabel%</strong> changed', array('%fieldlabel%' => __($field->getConfig('label')))); ?></dd>
+            <dd class="version-field">
+              <?php echo __('Field <strong>%fieldlabel%</strong> changed', array('%fieldlabel%' => __($field->getConfig('label', $name)))); ?>
+            </dd>
           <?php endif; ?>
         <?php endforeach; ?>
       <?php endforeach; ?>
