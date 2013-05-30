@@ -235,16 +235,13 @@ class sfTwitterBootstrap
   public static function guessLengthFromType($type)
   {
     switch ($type) {
-      case 'Date':
-        return 'input-mini';
-        break;
-
       case 'Boolean': // boolean is here because of the "yes or no" in the filter form
       case 'Number':
         return 'input-small';
         break;
 
       case 'Text': // input and textarea are in the same boat ...
+      case 'Date': // Type Date covers Date and Datetime !
       case 'ForeignKey':
       default:
         return 'input-large';
