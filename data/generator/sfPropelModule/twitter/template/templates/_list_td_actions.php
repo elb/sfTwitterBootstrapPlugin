@@ -19,10 +19,11 @@
 <?php else: ?>
     <li class="sf_admin_action_<?php echo $params['class_suffix'] ?>">
       <?php
+        $icon= '';
         if (sfTwitterBootstrap::getProperty('use_icons_in_button', false)) {
-          $params['label'] = isset($params['icon']) ? '<i class="'.$params['icon'].'"></i> ' . $params['label'] : $params['label'];
+          $icon = isset($params['icon']) ? '<i class="'.$params['icon'].'"></i> ' : '';
         }
-        echo $this->addCredentialCondition($this->getLinkToAction($name, $params, true), $params)
+        echo $this->addCredentialCondition($icon . $this->getLinkToAction($name, $params, true), $params)
       ?>
 
     </li>
